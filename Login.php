@@ -1,11 +1,11 @@
 <?php
-
+	 include_once 'Authenticate_Login.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
  <head>
- <link rel="stylesheet" href="style.css"> //This can be changed depending on the name of the file
+ <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8">
   <meta name="description" content="CRUD Project">
   <meta name="keywords" content="HTML, CSS, PHP">
@@ -30,19 +30,20 @@
 		<article>
 			<div class ="center">
 				<h1>Login</h1>
-				<form methos="post">
+				<form method="post" action="#">
 					<div class="txt_field">
-						<input type="text" required>
+						<input type="text" name="login_username" required>
 						<label>Username</label>
 						<span></span>
 					</div>
 					<div class="txt_field">
-						<input type="password" required>
+						<input type="password" name="login_password" required>
 						<label>Password</label>
 						<span></span>
 					</div>
 					<div class = "pass">Forgot Password?</div>
 					<input type="submit" value="Login">
+					
 					<div class = "signup_link">
 						Not a member? <a href="#">Signup</a>
 					</div>
