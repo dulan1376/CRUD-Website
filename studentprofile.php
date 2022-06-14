@@ -15,7 +15,7 @@
   			die('Could not connect: ' . mysqli_connect_error());
   		}
 	mysqli_select_db($con, $database);
-	$sql = "SELECT * FROM `tbl_studentprofile`";
+	$sql = "SELECT * FROM `tbl_studentdata`";
 	$result = mysqli_query($con, $sql);
 	?>
 
