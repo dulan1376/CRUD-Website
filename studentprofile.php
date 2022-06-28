@@ -2,23 +2,6 @@
     session_start();
 ?>
 
-<?php
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	$database = "cruddatabase";
-
-	$con = mysqli_connect($servername, $username, $password, $database);
-		if (!$con)
-
-  		{
-  			die('Could not connect: ' . mysqli_connect_error());
-  		}
-	mysqli_select_db($con, $database);
-	$sql = "SELECT * FROM `tbl_studentdata`";
-	$result = mysqli_query($con, $sql);
-	?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,31 +34,44 @@
 	<div class = "subheader">
 		<h1>Student Profile</h1>
 	</div>
-
-	<div class = "body">
-		<table id = "tblmain">
-			<tr>
-				<td><h2>Scholar</h2></td>
-			</tr>
-			<?php  while($row = mysqli_fetch_assoc($result)) { ?>
-			<tr>
-				<td>Name : </td>
-				<td><?php echo $row['student_name']; ?></td>
-			</tr>
-			<tr>
-				<td>Student ID : </td>
-				<td><?php echo $row['student_id']; ?></td>
-			</tr>
-			<tr>
-				<td>Type of Scholarship : </td>
-				<td><?php echo $row['student_scholarship']; ?></td>
-			</tr>
-			<tr>
-				<td>Gender : </td>
-				<td><?php echo $row['student_gender']; ?></td>
-			</tr>
-			<?php } ?>
-		</table>
-	</div>
+	
+	<form action = "studentprofile.php" method = "POST">
+		<div class = "body">
+			<table id = "tblmain">
+				<tr>
+					<td><h2>Scholar</h2></td>
+				</tr>
+				<?php  while($row = mysqli_fetch_assoc($result)) { ?>
+				<tr>
+					<td>Name : </td>
+					<td><input class = "txtbox" type = "text" name = "student_name<?php echo $row['student_name']?>" readonly></td>
+				</tr>
+				<tr>
+					<td>Student ID : </td>
+					<td><?php echo $row['student_id']; ?></td>
+				</tr>
+				<tr>
+					<td>Type of Scholarship : </td>
+					<td><?php echo $row['student_scholarship']; ?></td>
+				</tr>
+				<tr>
+					<td>Gender : </td>
+					<td><?php echo $row['student_gender']; ?></td>
+				</tr>
+				<tr>
+					<td>Contact Number : </td>
+					<td><?php echo $row['student_contact']; ?></td>
+				</tr>
+				<tr>
+					<td>Address : </td>
+					<td><?php echo $row['student_address']; ?></td>
+				</tr>
+				<tr>
+					<td>Guardian Contact Number : </td>
+					<td><?php echo $row['guardian_contact']; ?></td>
+				</tr>
+				<?php } ?>
+			</table>
+		</div>
 </body>
 </html>
