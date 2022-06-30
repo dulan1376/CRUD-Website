@@ -1,5 +1,5 @@
 <?php
-    session_start();
+	include_once 'access_studentprofile.php';
 ?>
 
 <!DOCTYPE html>
@@ -44,34 +44,35 @@
 				<?php  while($row = mysqli_fetch_assoc($result)) { ?>
 				<tr>
 					<td>Name : </td>
-					<td><input class = "txtbox" type = "text" name = "student_name<?php echo $row['student_name']?>" readonly></td>
+					<td><input class = "txtbox" type = "text" name = "student_name" value = "<?php echo $row['student_fname']," ",$row['student_lname']?>" readonly></td>
 				</tr>
 				<tr>
 					<td>Student ID : </td>
-					<td><?php echo $row['student_id']; ?></td>
+					<td><input class = "txtbox" type = "text" name = "student_number" value = "<?php echo $row['student_id']?>" readonly></td>
 				</tr>
 				<tr>
 					<td>Type of Scholarship : </td>
-					<td><?php echo $row['student_scholarship']; ?></td>
+					<td><input class = "txtbox" type = "text" name = "student_scholarship" value ="<?php echo $row['student_scholarship']?>" readonly></td>
 				</tr>
 				<tr>
 					<td>Gender : </td>
-					<td><?php echo $row['student_gender']; ?></td>
+					<td><input class = "txtbox" type = "text" name = "student_gender" value = "<?php echo $row['student_gender']?>" readonly></td>
 				</tr>
 				<tr>
 					<td>Contact Number : </td>
-					<td><?php echo $row['student_contact']; ?></td>
+					<td><input class = "txtbox" type = "text" name = "contact_num" value = "<?php echo $row['student_contact']?>"></td>
 				</tr>
 				<tr>
 					<td>Address : </td>
-					<td><?php echo $row['student_address']; ?></td>
+					<td><input class = "txtbox" type = "text" name = "address" value = "<?php echo $row['student_address']?>"></td>
 				</tr>
 				<tr>
 					<td>Guardian Contact Number : </td>
-					<td><?php echo $row['guardian_contact']; ?></td>
+					<td><input class = "txtbox" type = "text" name = "guardian" value = "<?php echo $row['guardian_contact']?>"></td>
 				</tr>
 				<?php } ?>
 			</table>
 		</div>
+	</form>
 </body>
 </html>

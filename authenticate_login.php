@@ -12,7 +12,7 @@ if (isset($_POST['login_username'])) {
         $data = mysqli_fetch_array($result);
         if (password_verify($login_password, $data['hashed_password'])){
             $_SESSION['User'] = $_POST['login_username'];
-            header("Location: scholar_homepage.php");
+            $_SESSION['ID'] = $data['id'];
         }
         else{
             header("Wrong inputs");

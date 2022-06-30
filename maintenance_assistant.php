@@ -22,12 +22,17 @@
     padding:12px;
     border:1px solid black;
   }
-
+  tr.second{
+    background-color: cadetblue;
+  }
+  tr.last{
+    border: none;
+  }
 </style>
   </head>
   <body>
-  <?php
-include "dashboard_connect.php";
+<?php
+include "database_connect.php";
 ?>
     <table>
       <tr>
@@ -60,9 +65,9 @@ include "dashboard_connect.php";
       </tr>
 
 <?php
-$query = "SELECT * FROM tblsample WHERE fldscholar = 'Maintenance Assistant'";
+$query = "SELECT * FROM tbl_studentdata WHERE student_scholarship = 'Maintenance Assistant'";
 
-$check = mysqli_query($mysqli,"SELECT * FROM tblsample WHERE fldscholar ='Maintenance Assistant'");
+$check = mysqli_query($conn,"SELECT * FROM tbl_studentdata WHERE student_scholarship ='Maintenance Assistant'");
 
 $checkrows = mysqli_num_rows($check);
 
@@ -70,27 +75,39 @@ echo ' <tr>
 <td>
 <table border="1" >
       <tr>
-          <td> # </td> 
-          <td> Student No. </td> 
-          <td> Name </td> 
-          <td> Scholarship </td> 
+          <td> First Name </td> 
+          <td> Last Name </td> 
+          <td> Student ID </td> 
+          <td> Student Scholarship </td> 
+          <td> Gender </td> 
+          <td> Contact </td> 
+          <td> Address </td> 
+          <td> Guardian Contact </td> 
       </tr>';
       if($checkrows == 0) {
         echo "<tr><td colspan = '6' style='vertical-align : middle;text-align:center;'><p style='color:red'>Record Not Found</p></td></tr>";
         echo "</table>";
      }
      else {
-      if ($result = $mysqli->query($query)) {
+      if ($result = $conn->query($query)) {
         while ($row = $result->fetch_assoc()) {
-            $fldindex = $row["fldindex"];
-            $fldstudentno = $row["fldstudentno"];
-            $fldname = $row["fldname"];
-            $fldscholar = $row["fldscholar"];
+            $student_fname = $row["student_fname"];
+            $student_lname = $row["student_lname"];
+            $student_id = $row["student_id"];
+            $student_scholarship = $row["student_scholarship"];
+            $student_gender = $row["student_gender"];
+            $student_contact = $row["student_contact"];
+            $student_address = $row["student_address"];
+            $guardian_contact = $row["guardian_contact"];
             echo '<tr> 
-                      <td>'.$fldindex.'</td> 
-                      <td>'.$fldstudentno.'</td> 
-                      <td>'.$fldname.'</td> 
-                      <td>'.$fldscholar.'</td> 
+                      <td>'.$student_fname.'</td> 
+                      <td>'.$student_lname.'</td> 
+                      <td>'.$student_id.'</td> 
+                      <td>'.$student_scholarship.'</td> 
+                      <td>'.$student_gender.'</td> 
+                      <td>'.$student_contact.'</td> 
+                      <td>'.$student_address.'</td> 
+                      <td>'.$guardian_contact.'</td> 
                   </tr>';
         }
       

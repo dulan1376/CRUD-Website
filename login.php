@@ -30,7 +30,7 @@ include_once 'authenticate_login.php';
 		<section>
 			<div class="center">
 				<h2>Login</h2>
-				<form method="post">
+				<form action = "studentprofile.php" method="post">
 					<div class="txt_field">
 						<input type="text" name="login_username" required>
 						<label>Username</label>
