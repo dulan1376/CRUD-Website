@@ -1,5 +1,6 @@
 <?php
 	include_once 'access_studentprofile.php';
+	include_once 'update_studentprofile.php';
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +43,7 @@
 					<td><h2>Scholar</h2></td>
 				</tr>
 				<?php  while($row = mysqli_fetch_assoc($result)) { ?>
+
 				<tr>
 					<td>Name : </td>
 					<td><input class = "txtbox" type = "text" name = "student_name" value = "<?php echo $row['student_fname']," ",$row['student_lname']?>" readonly></td>
@@ -70,9 +72,12 @@
 					<td>Guardian Contact Number : </td>
 					<td><input class = "txtbox" type = "text" name = "guardian" value = "<?php echo $row['guardian_contact']?>"></td>
 				</tr>
+				<td><input class = "button-right button-style" type = submit name = "update" value = "Update" formaction = "studentprofile.php"> </td>
 				<?php } ?>
+
 			</table>
 		</div>
 	</form>
+
 </body>
 </html>
