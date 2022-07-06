@@ -1,6 +1,7 @@
 <?php
 	include_once 'database_connect.php';
-
+	
+	mysqli_select_db($conn, $db);
 	if(isset($_POST['update'])){
 
 		$student_contact = $_POST['contact_num'];
