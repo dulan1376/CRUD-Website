@@ -36,7 +36,7 @@
 		<h1>Student Profile</h1>
 	</div>
 	
-	<form action = "studentprofile.php" method = "POST">
+	<form method = "POST">
 		<div class = "body">
 			<table id = "tblmain">
 				<tr>
@@ -50,7 +50,7 @@
 				</tr>
 				<tr>
 					<td>Student ID : </td>
-					<td><input class = "txtbox" type = "text" name = "student_number" value = "<?php echo $row['student_id']?>" readonly></td>
+					<td><input class = "txtbox" type = "text" name = "student_id" value = "<?php echo $row['student_id']?>" readonly></td>
 				</tr>
 				<tr>
 					<td>Type of Scholarship : </td>
@@ -62,17 +62,17 @@
 				</tr>
 				<tr>
 					<td>Contact Number : </td>
-					<td><input class = "txtbox" type = "text" name = "contact_num" value = "<?php echo $row['student_contact']?>"></td>
+					<td><input class = "txtbox" type = "text" name = "student_contact" value = "<?php echo $row['student_contact']?>"></td>
 				</tr>
 				<tr>
 					<td>Address : </td>
-					<td><input class = "txtbox" type = "text" name = "address" value = "<?php echo $row['student_address']?>"></td>
+					<td><input class = "txtbox" type = "text" name = "student_address" value = "<?php echo $row['student_address']?>"></td>
 				</tr>
 				<tr>
 					<td>Guardian Contact Number : </td>
-					<td><input class = "txtbox" type = "text" name = "guardian" value = "<?php echo $row['guardian_contact']?>"></td>
+					<td><input class = "txtbox" type = "text" name = "guardian_contact" value = "<?php echo $row['guardian_contact']?>"></td>
 				</tr>
-				<td><input class = "button-right button-style" type = submit name = "update" value = "Update" formaction = "studentprofile.php"> </td>
+				<td><input class = "button-right button-style" type = submit name = "update" value = "Update"> </td>
 				<?php } ?>
 
 			</table>
