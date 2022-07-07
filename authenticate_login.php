@@ -11,8 +11,16 @@ if (isset($_POST['login_username'])) {
     if (mysqli_num_rows($result) > 0) {
         $data = mysqli_fetch_array($result);
         if (password_verify($login_password, $data['hashed_password'])){
-            $_SESSION['User'] = $_POST['login_username'];
+            $_SESSION['User'] = $data['user_name'];
             $_SESSION['ID'] = $data['id'];
+            if($data['user_name'] == "admin"){
+                header("Location: http://localhost/LAMP-DATABASE-MONITORING-WEBSITE/dashboard.php");
+                exit();
+            }
+            else{
+                header("Location: http://localhost/LAMP-DATABASE-MONITORING-WEBSITE/studentprofile.php");
+                exit();
+            }
         }
         else{
             header("Wrong inputs");
