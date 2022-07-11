@@ -7,7 +7,7 @@ if (isset($_POST['user_name'])) {
     $user_new_password = $_POST['new_password'];
     $user_confirm_new_password = $_POST['confirm_new_password'];
     $user_name = $_POST['user_name'];
-    $sql = "SELECT * FROM user_lampp_scholar WHERE user_name='" . $user_name . "' ";
+    $sql = "SELECT * FROM user_lamp_scholar WHERE user_name='" . $user_name . "' ";
 
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) > 0) {
