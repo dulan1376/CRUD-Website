@@ -29,7 +29,6 @@
 	<div class = "header">
 		<a href="#default" class="logo">LOGO</a>
 		<div class="header-right">
-   		<a class="active" href="#logout">Logout</a>
   	</div>
 
 	<div class = "subheader">
@@ -37,6 +36,7 @@
 	</div>
 	
 	<form method = "POST">
+	<input type = submit value = "Logout" formaction = "logout.php" >
 		<div class = "body">
 			<table id = "tblmain">
 				<tr>

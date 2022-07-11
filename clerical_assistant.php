@@ -34,6 +34,7 @@
 <?php
 include "database_connect.php";
 ?>
+<form>
     <table>
       <tr>
         <td rowspan = "5" style="vertical-align : middle;text-align:center;">
@@ -55,7 +56,7 @@ include "database_connect.php";
           </table>
         </td>
         <td>
-          &nbsp;
+        <input type = submit value = "Logout" formaction = "logout.php" >
         </td>
       </tr>
       <tr>
@@ -119,6 +120,7 @@ echo ' <tr>
     }
 ?>
 </table>
+  </form>
   </body>
 
 </html>

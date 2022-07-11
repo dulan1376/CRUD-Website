@@ -12,7 +12,7 @@ if (isset($_POST['login_username'])) {
         $data = mysqli_fetch_array($result);
         if (password_verify($login_password, $data['hashed_password'])){
             $_SESSION['User'] = $data['user_name'];
-            $_SESSION['ID'] = $data['id'];
+            $_SESSION['ID'] = $data['student_id'];
             if($data['user_name'] == "admin"){
                 header("Location: http://localhost/LAMP-DATABASE-MONITORING-WEBSITE/dashboard.php");
                 exit();

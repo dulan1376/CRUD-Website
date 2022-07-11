@@ -25,6 +25,7 @@
 </style>
   </head>
   <body>
+  <form>
       <table>
       <tr>
         <td rowspan = "5" style="vertical-align : middle;text-align:center;">
@@ -46,6 +47,7 @@
           </table>
         </td>
         <td>
+        <input type = submit value = "Logout" formaction = "logout.php" >
           &nbsp;
         </td>
       </tr>
@@ -91,10 +93,18 @@
   </a>
   </td>
 </tr>
+<tr>
+  <td>
+  <a href="pending_scholar.php">
+    PENDING
+  </a>
+  </td>
+</tr>
 </table>
 </td>
 </tr>
 </table>
+</form>
   </body>
 
 </html>
