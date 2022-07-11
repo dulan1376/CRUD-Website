@@ -5,7 +5,7 @@ include_once 'database_connect.php';
 mysqli_select_db($conn, $db);
 if (isset($_POST['authenticate_email'])) {
     $user_email = $_POST['authenticate_email'];
-    $sql = "SELECT * FROM user_lampp_scholar WHERE user_email='" . $user_email . "' ";
+    $sql = "SELECT * FROM user_lamp_scholar WHERE user_email='" . $user_email . "' ";
 
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) > 0) {
