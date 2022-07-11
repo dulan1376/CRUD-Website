@@ -15,7 +15,7 @@ if (isset($_POST['user_name'])) {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         } else if ($user_new_password == $user_confirm_new_password) {
             $new_hashed_password = password_hash($user_new_password, PASSWORD_DEFAULT);
-            $sql = "UPDATE user_lampp_scholar SET hashed_password = $new_hashed_password WHERE user_name = $user_name";
+            $sql = "UPDATE user_lamp_scholar SET hashed_password = '$new_hashed_password' WHERE user_name = '$user_name'";
             mysqli_query($conn, $sql);
 
             header("Location: login.php");

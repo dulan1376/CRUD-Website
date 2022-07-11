@@ -23,7 +23,8 @@ if (isset($_POST['signup_email'])) {
     if (mysqli_num_rows($result) < 1) {
 
         if ($password != $confirm_password) {
-            echo "Error in password: " . $sql . "<br>" . mysqli_error($conn);
+            header("Location: signup.php?err=".urlencode ("The password and confirm password do not match"));
+            exit();
         } else {
 
             $hashed_password = password_hash($password, PASSWORD_BCRYPT);
