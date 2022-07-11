@@ -71,7 +71,7 @@
 
                     <div class="txt_field">
                         <input type="text" name="signup_email" required>
-                        <label>Email</label>
+                        <label>DLSL Email</label>
                         <span></span>
                     </div>
                     
