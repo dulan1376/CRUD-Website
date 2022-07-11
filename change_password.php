@@ -29,12 +29,12 @@
                         <span></span>
                     </div>
                     <div class="txt_field">
-                        <input type="text" name="new_password">
+                        <input type="password" name="new_password">
                         <label>New Password</label>
                         <span></span>
                     </div>
                     <div class="txt_field">
-                        <input type="text" name="confirm_new_password">
+                        <input type="password" name="confirm_new_password">
                         <label>Confirm New Password</label>
                         <span></span>
                     </div>
